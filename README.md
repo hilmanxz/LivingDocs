@@ -8,31 +8,31 @@ LivingDocs is an AI-powered engineering intelligence platform that continuously 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 
-## ✨ Features
+## Features
 
-### Phase 1 (MVP) - Complete ✅
+### Phase 1 (MVP) - Complete
 
-- **🔍 Static Intelligence Layer**
+- **Static Intelligence Layer**
   - TypeScript AST parsing using TypeScript Compiler API
   - Recursive codebase analysis with metrics extraction
   - Extracts imports, exports, symbols, and source locations
 
-- **📊 Architecture Graph**
+- **Architecture Graph**
   - In-memory graph with O(1) lookups
   - BFS pathfinding and DFS circular dependency detection
   - JSON serialization for caching and graph diffing
 
-- **🤖 Semantic Intelligence Layer**
+- **Semantic Intelligence Layer**
   - Unified LLM interface for OpenAI and Anthropic Claude
   - Context-aware prompt assembly with token management
   - AI-powered file, folder, and module summarization
 
-- **📚 Documentation Engine**
+- **Documentation Engine**
   - Auto-generate README, architecture docs, onboarding guides, API docs
   - Mermaid diagram generation for dependency graphs and service maps
   - Template-based markdown generation
 
-- **⚡ CLI (6 Commands)**
+- **CLI (6 Commands)**
   - `init` - Initialize project with `.livingdocs` config
   - `scan` - Analyze codebase and build architecture graph
   - `generate` - Create all documentation from graph
@@ -40,24 +40,24 @@ LivingDocs is an AI-powered engineering intelligence platform that continuously 
   - `status` - Track documentation freshness and report stale docs
   - `watch` - Monitor filesystem with auto-regeneration
 
-### Phase 2 - Complete ✅
+### Phase 2 - Complete
 
-- **💬 AI Query Layer**
+- **AI Query Layer**
   - Natural language query interface: `livingdocs ask "Why does auth use Redis?"`
   - Question classification (why, how, what, where, impact, dependency)
   - RAG-based answers with source tracing and confidence scoring
 
-- **🔄 PR/Commit Summarization**
+- **PR/Commit Summarization**
   - Git diff parsing and analysis
   - Architectural change detection and impact assessment
   - Automated PR summary generation with risk scoring
 
-- **🔌 MCP Server**
+- **MCP Server**
   - Model Context Protocol server for AI agents
   - 6 tools: `explain_file`, `explain_folder`, `trace_flow`, `detect_impact`, `summarize_commit`, `generate_docs`
   - Compatible with Claude Desktop, Cursor, Continue.dev
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -118,7 +118,7 @@ livingdocs ask "How does a request reach the billing service?"
 livingdocs ask "What modules depend on the database?"
 ```
 
-## 📖 CLI Commands
+## CLI Commands
 
 ### `livingdocs init`
 Initialize LivingDocs in your project. Creates `.livingdocs/config.json` and runs initial scan.
@@ -203,7 +203,7 @@ Start the MCP server for AI agent integration.
 livingdocs mcp
 ```
 
-## 🔌 MCP Integration
+## MCP Integration
 
 LivingDocs exposes a Model Context Protocol (MCP) server that AI agents can use to understand codebases.
 
@@ -233,7 +233,7 @@ Add to `claude_desktop_config.json`:
 | `summarize_commit` | Summarize git commit changes | `{ commitHash?: string }` |
 | `generate_docs` | Generate documentation | `{ path: string, type: "readme" \| "architecture" \| "onboarding" \| "api" }` |
 
-## 🏗️ Architecture
+## Architecture
 
 LivingDocs is organized as a TypeScript monorepo with 5 packages:
 
@@ -268,7 +268,7 @@ Templates (markdown generation)
 Documentation Files
 ```
 
-## 🧪 Development
+## Development
 
 ### Run Tests
 
@@ -309,7 +309,7 @@ pnpm lint
 pnpm format
 ```
 
-## 🗺️ Roadmap
+## Roadmap
 
 ### Phase 3 (Planned)
 - Multi-language support (Python, Go, Java)
@@ -323,15 +323,15 @@ pnpm format
 - Internal knowledge graph (org-wide)
 - Organization-wide engineering intelligence dashboard
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read our contributing guidelines before submitting PRs.
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with:
 - [TypeScript](https://www.typescriptlang.org/)
