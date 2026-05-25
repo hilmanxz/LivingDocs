@@ -10,8 +10,6 @@ LivingDocs is an AI-powered engineering intelligence platform that continuously 
 
 ## Features
 
-### Phase 1 (MVP) - Complete
-
 - **Static Intelligence Layer**
   - TypeScript AST parsing using TypeScript Compiler API
   - Recursive codebase analysis with metrics extraction
@@ -32,18 +30,17 @@ LivingDocs is an AI-powered engineering intelligence platform that continuously 
   - Mermaid diagram generation for dependency graphs and service maps
   - Template-based markdown generation
 
-- **CLI (6 Commands)**
+- **CLI Commands**
   - `init` - Initialize project with `.livingdocs` config
   - `scan` - Analyze codebase and build architecture graph
   - `generate` - Create all documentation from graph
   - `explain <path>` - Explain file/folder structure and dependencies
   - `status` - Track documentation freshness and report stale docs
   - `watch` - Monitor filesystem with auto-regeneration
-
-### Phase 2 - Complete
+  - `ask <question>` - Natural language query interface
 
 - **AI Query Layer**
-  - Natural language query interface: `livingdocs ask "Why does auth use Redis?"`
+  - Natural language query interface for codebase understanding
   - Question classification (why, how, what, where, impact, dependency)
   - RAG-based answers with source tracing and confidence scoring
 
@@ -311,17 +308,37 @@ pnpm format
 
 ## Roadmap
 
-### Phase 3 (Planned)
-- Multi-language support (Python, Go, Java)
-- Historical architecture memory (track changes over time)
-- Engineering decision tracking (ADR-style)
-- Autonomous documentation repair
+### Multi-Language Support
+- Python support with AST parsing
+- Go support with AST parsing
+- Java support with AST parsing
+- Language-agnostic architecture graph
 
-### Phase 4 (Planned)
-- Enterprise collaboration features
-- Slack integration
-- Internal knowledge graph (org-wide)
-- Organization-wide engineering intelligence dashboard
+### Historical Architecture Memory
+- Track architecture changes over time
+- Visualize architecture evolution
+- Compare architecture across commits
+- Detect architectural drift
+
+### Engineering Decision Tracking
+- ADR (Architecture Decision Records) integration
+- Automatic decision extraction from commits
+- Decision impact analysis
+- Decision timeline visualization
+
+### Autonomous Documentation Repair
+- Detect stale documentation automatically
+- Propose documentation updates
+- Auto-fix outdated code examples
+- Validate documentation against code
+
+### Enterprise Features
+- Team collaboration features
+- Slack integration for architecture alerts
+- Internal knowledge graph (organization-wide)
+- Engineering intelligence dashboard
+- Multi-repository support
+- Access control and permissions
 
 ## Contributing
 
