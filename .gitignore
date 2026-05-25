@@ -1,1 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# LivingDocs cache
+.livingdocs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docs (generated)
 /docs
