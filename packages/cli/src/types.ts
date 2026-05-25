@@ -42,6 +42,19 @@ export interface GenerateOptions extends GlobalOptions {}
 export interface StatusOptions extends GlobalOptions {}
 
 /**
+ * Options for the `ask` command.
+ */
+export interface AskOptions extends GlobalOptions {
+  /** The natural language question to ask about the codebase */
+  question: string;
+}
+
+/**
+ * Options for the `mcp` command.
+ */
+export interface McpOptions extends GlobalOptions {}
+
+/**
  * A command handler function.
  * Each command module exports a handler matching this signature.
  */

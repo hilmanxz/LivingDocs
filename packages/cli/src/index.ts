@@ -6,6 +6,8 @@ import { watch } from './commands/watch.js';
 import { explain } from './commands/explain.js';
 import { generate } from './commands/generate.js';
 import { status } from './commands/status.js';
+import { ask } from './commands/ask.js';
+import { mcp } from './commands/mcp.js';
 import type { GlobalOptions } from './types.js';
 
 const VERSION = '0.1.0';
@@ -80,6 +82,18 @@ function createProgram(): Command {
     .description('Show documentation freshness and system status')
     .action((options) => handleAction(status)(options));
 
+  // livingdocs ask <question>
+  program
+    .command('ask <question>')
+    .description('Ask a natural language question about the codebase')
+    .action((question, options) => handleAction(ask, { question })(options));
+
+  // livingdocs mcp
+  program
+    .command('mcp')
+    .description('Start the MCP server for AI agent integration')
+    .action((options) => handleAction(mcp)(options));
+
   // Help text
   program.on('--help', () => {
     console.log('');
@@ -90,6 +104,9 @@ function createProgram(): Command {
     console.log('  $ livingdocs explain src/services/auth');
     console.log('  $ livingdocs generate');
     console.log('  $ livingdocs status');
+    console.log('  $ livingdocs ask "Why does auth use Redis?"');
+    console.log('  $ livingdocs ask "What modules depend on database?"');
+    console.log('  $ livingdocs mcp');
     console.log('');
     console.log('Global Options:');
     console.log('  -v, --verbose    Enable verbose logging');

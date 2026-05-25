@@ -1,10 +1,13 @@
 {
   "name": "@livingdocs/mcp",
   "version": "0.1.0",
-  "description": "MCP server for LivingDocs (Phase 2)",
+  "description": "MCP server for LivingDocs - exposes codebase analysis tools to AI agents",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "livingdocs-mcp": "./bin/livingdocs-mcp.js"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -19,9 +22,17 @@
   },
   "dependencies": {
     "@livingdocs/shared": "workspace:*",
-    "@livingdocs/core": "workspace:*"
+    "@livingdocs/core": "workspace:*",
+    "@livingdocs/engine": "workspace:*",
+    "@modelcontextprotocol/server": "2.0.0-alpha.2",
+    "zod": "^3.25.0"
   },
   "devDependencies": {
-    "tsup": "^8.0.1"
+    "tsup": "^8.0.1",
+    "@types/node": "^20.10.0",
+    "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

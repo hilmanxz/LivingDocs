@@ -1,7 +1,13 @@
-import { TypeScriptParser } from '@livingdocs/core';
+#!/usr/bin/env node
+import { startServer } from './server.js';
 
-export class McpServer {
-  start(): void {
-    console.log('MCP Server starting...');
-  }
+// Export server creation for programmatic use
+export { createMcpServer, startServer } from './server.js';
+
+// Start server when run directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  startServer().catch((error) => {
+    console.error('Failed to start MCP server:', error);
+    process.exit(1);
+  });
 }

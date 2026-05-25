@@ -28,9 +28,9 @@ export class ProjectAnalyzer {
   private scanDirectory(dir: string): string[] {
     const results: string[] = [];
 
-    let entries: ReturnType<typeof readdirSync>;
+    let entries: string[];
     try {
-      entries = readdirSync(dir);
+      entries = readdirSync(dir) as string[];
     } catch {
       return results;
     }

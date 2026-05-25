@@ -467,3 +467,69 @@ export interface ApiDocsData {
   }>;
   graph: SerializedGraph;
 }
+
+/**
+ * Change analysis types for PR/Commit summarization
+ */
+
+/**
+ * Represents a single file diff
+ */
+export interface FileDiff {
+  path: string;
+  status: 'added' | 'modified' | 'deleted' | 'renamed';
+  additions: number;
+  deletions: number;
+  hunks: DiffHunk[];
+  oldPath?: string; // For renamed files
+}
+
+/**
+ * Represents a hunk (section) of changes in a diff
+ */
+export interface DiffHunk {
+  oldStart: number;
+  oldLines: number;
+  newStart: number;
+  newLines: number;
+  content: string;
+}
+
+/**
+ * Summary of changes from a diff
+ */
+export interface ChangeSummary {
+  overview: string;
+  structuralChanges: string[];
+  affectedModules: string[];
+  riskLevel: 'low' | 'medium' | 'high';
+}
+
+/**
+ * Impact analysis report
+ */
+export interface ImpactReport {
+  directlyAffected: string[];
+  potentiallyAffected: string[];
+  regressionZones: string[];
+  riskAssessment: string;
+}
+
+/**
+ * Query layer types for natural language questions
+ */
+
+/**
+ * Question type classification
+ */
+export type QuestionType = 'why' | 'how' | 'what' | 'where' | 'impact' | 'dependency';
+
+/**
+ * Result from a natural language query
+ */
+export interface QueryResult {
+  answer: string;
+  confidence: number;
+  sources: Array<{ path: string; relevance: number }>;
+  relatedNodes: GraphNode[];
+}
